@@ -1,15 +1,17 @@
 # pixie-to-curl
 
-A simple go tool that exports HTTP traffic from [Pixie](https://github.com/pixie-io/pixie) and converts into re-usable curl scripts. In other words, it uses the power of eBPF to record real traffic that you can run as tests.
+A simple go tool that exports HTTP traffic from [Pixie](https://github.com/pixie-io/pixie) and converts into re-usable curl scripts. In other words, it uses the power of eBPF to record real traffic that you can run as tests. Check out Omid Azizi and Matthew LeRay's KubeCon EU talk for more (link to be posted after KubeCon).
 
-## How to use
+Note that if the real request returns a 200 then a `--fail` will be added so that curl returns an error if the test request does not do the same.
+
+## Before you begin
 
 1. Install pixie into your Kubernetes cluster
 2. Retrieve your [cluster ID](https://docs.pixielabs.ai/reference/admin/cluster-id/#find-the-cluster-id)
 3. Generate an [api token](https://docs.pixielabs.ai/reference/admin/api-keys/) and save it
 4. Deploy your service and view it in the Pixie UI
 5. Optional: Tune the time range you want in `export/pixie.go`
-6. Run the script
+6. Now you can run the script
 
 ## Usage
 
