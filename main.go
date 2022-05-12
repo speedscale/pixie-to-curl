@@ -76,6 +76,7 @@ destination_filter - name of the pod receiving traffic (usually the service you 
 base_url - prefix for each HTTP curl command (it isn't usually the same between environments)
 
 Examples:
+	pixie-to-curl px-api-<UID> 123456-1234-1234-1234-12312331 demo/gateway http://gateway
 	pixie-to-curl px-api-<UID> 123456-1234-1234-1234-12312331 podtato http://podtato-head-entry.default.svc.cluster.local
 	pixie-to-curl px-api-<UID> 123456-1234-1234-1234-12312331 payment http://payment.default.svc.cluster.local`)
 
